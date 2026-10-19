@@ -172,17 +172,17 @@ rule-providers:
   loyalsoldier-proxy:
     type: http
     behavior: classical
-    format: mrs
+    format: yaml
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt
+    path: ./providers/loyalsoldier-proxy.yaml
     interval: 86400
-    path: ./providers/loyalsoldier-proxy.mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs
   loyalsoldier-reject:
     type: http
     behavior: classical
-    format: mrs
+    format: yaml
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt
+    path: ./providers/loyalsoldier-reject.yaml
     interval: 86400
-    path: ./providers/loyalsoldier-reject.mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs
   hagezi-dns-ultimate:
     type: http
     behavior: domain
