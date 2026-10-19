@@ -216,7 +216,7 @@ rules:
   - RULE-SET,loyalsoldier-proxy,🚀 节点选择
   - RULE-SET,loyalsoldier-geoip,DIRECT,no-resolve
   - GEOSITE,category-ads-all,🛑 广告拦截
-  - GEOSENT,category-ai-!cn,💬 AI 服务
+  - GEOSITE,category-ai-!cn,💬 AI 服务
   - GEOSITE,bilibili,🔒 国内直连
   - GEOSITE,youtube,🌐 代理通用
   - GEOSITE,google,🌐 代理通用
