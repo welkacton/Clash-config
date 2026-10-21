@@ -1,66 +1,66 @@
 ```yaml
 proxy-groups:
-  - name: "⚡ 自动选择"
-    type: url-test
-    include-all-proxies: true
-    url: "https://www.gstatic.com/generate_204"
-    interval: 300
-    tolerance: 50
-    lazy: true
+- name: 🌐 海外应用 [场景]
+  type: select
+  proxies:
+  - ⚡ 自动选择
+  - PROXY
+  - DIRECT
+  include-all-proxies: true
 
-  - name: "🌐 海外应用 [场景]"
-    type: select
-    proxies:
-      - "⚡ 自动选择"
-      - PROXY
-      - DIRECT
-    include-all-proxies: true
+- name: 📺 流媒体 [场景]
+  type: select
+  proxies:
+  - ⚡ 自动选择
+  - PROXY
+  - DIRECT
+  include-all-proxies: true
 
-  - name: "📺 流媒体 [场景]"
-    type: select
-    proxies:
-      - "⚡ 自动选择"
-      - PROXY
-      - DIRECT
-    include-all-proxies: true
+- name: 🤖 AI 服务 [场景]
+  type: select
+  proxies:
+  - ⚡ 自动选择
+  - PROXY
+  - DIRECT
+  include-all-proxies: true
 
-  - name: "🤖 AI 服务 [场景]"
-    type: select
-    proxies:
-      - "⚡ 自动选择"
-      - PROXY
-      - DIRECT
-    include-all-proxies: true
+- name: 🍎 Apple / iCloud [场景]
+  type: select
+  proxies:
+  - ⚡ 自动选择
+  - PROXY
+  - DIRECT
+  include-all-proxies: true
 
-  - name: "🍎 Apple / iCloud [场景]"
-    type: select
-    proxies:
-      - "⚡ 自动选择"
-      - PROXY
-      - DIRECT
-    include-all-proxies: true
+- name: 🪟 Microsoft 微软
+  type: select
+  proxies:
+  - ⚡ 自动选择
+  - PROXY
+  include-all-proxies: true
 
-  - name: "🪟 Microsoft 微软"
-    type: select
-    proxies:
-      - "⚡ 自动选择"
-      - PROXY
-    include-all-proxies: true
+- name: ⚡ 自动选择
+  type: url-test
+  include-all-proxies: true
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  lazy: true
 
-  - name: "🚀 漏网之鱼 [自选]"
-    type: select
-    proxies:
-      - "⚡ 自动选择"
-      - PROXY
-      - DIRECT
-    include-all-proxies: true
+- name: 🚀 漏网之鱼 [自选]
+  type: select
+  proxies:
+  - ⚡ 自动选择
+  - PROXY
+  - DIRECT
+  include-all-proxies: true
 
 rule-providers:
   hrules-private-direct:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/private_direct.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/private_direct.yaml
     path: ./providers/private_direct.yaml
     interval: 21600
 
@@ -68,7 +68,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/network_test.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/network_test.yaml
     path: ./providers/network_test.yaml
     interval: 21600
 
@@ -76,7 +76,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/sensitive_ai.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/sensitive_ai.yaml
     path: ./providers/sensitive_ai.yaml
     interval: 21600
 
@@ -84,7 +84,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/general_ai.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/general_ai.yaml
     path: ./providers/general_ai.yaml
     interval: 21600
 
@@ -92,7 +92,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/streaming_media.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/streaming_media.yaml
     path: ./providers/streaming_media.yaml
     interval: 21600
 
@@ -100,7 +100,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/youtube_media.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/youtube_media.yaml
     path: ./providers/youtube_media.yaml
     interval: 21600
 
@@ -108,7 +108,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/telegram.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/telegram.yaml
     path: ./providers/telegram.yaml
     interval: 21600
 
@@ -116,7 +116,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/mainstream_proxy.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/mainstream_proxy.yaml
     path: ./providers/mainstream_proxy.yaml
     interval: 21600
 
@@ -124,7 +124,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_global.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_global.yaml
     path: ./providers/apple_global.yaml
     interval: 21600
 
@@ -132,7 +132,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_intelligence_route.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_intelligence_route.yaml
     path: ./providers/apple_intelligence_route.yaml
     interval: 21600
 
@@ -140,7 +140,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_private_relay_route.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_private_relay_route.yaml
     path: ./providers/apple_private_relay_route.yaml
     interval: 21600
 
@@ -148,7 +148,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/cn_direct.yaml"
+    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/cn_direct.yaml
     path: ./providers/cn_direct.yaml
     interval: 21600
 
@@ -156,7 +156,7 @@ rule-providers:
     type: http
     behavior: ipcidr
     format: mrs
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
     path: ./providers/hrules-cn-ip.mrs
     interval: 21600
 
@@ -164,7 +164,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs
     path: ./providers/geolocation-not-cn.mrs
     interval: 21600
 
@@ -172,44 +172,44 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
     path: ./providers/microsoft.mrs
     interval: 21600
 
 rules:
-  - RULE-SET,hrules-private-direct,DIRECT,no-resolve
-  - RULE-SET,microsoft-domains,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,microsoft.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,microsoftonline.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,microsoft365.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,office.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,office365.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,office.net,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,outlook.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,outlook.office.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,hotmail.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,live.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,live.net,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,onedrive.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,sharepoint.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,teams.microsoft.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,azure.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,azure.net,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,visualstudio.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,github.com,"🪟 Microsoft 微软"
-  - DOMAIN-SUFFIX,githubusercontent.com,"🪟 Microsoft 微软"
-  - RULE-SET,hrules-cn-direct,DIRECT
-  - RULE-SET,hrules-network-test,"🤖 AI 服务 [场景]"
-  - RULE-SET,hrules-sensitive-ai,"🤖 AI 服务 [场景]"
-  - RULE-SET,hrules-general-ai,"🤖 AI 服务 [场景]"
-  - RULE-SET,hrules-apple-intelligence-route,"🤖 AI 服务 [场景]"
-  - RULE-SET,hrules-streaming-media,"📺 流媒体 [场景]"
-  - RULE-SET,hrules-youtube-media,"🌐 海外应用 [场景]"
-  - RULE-SET,hrules-telegram,"🌐 海外应用 [场景]",no-resolve
-  - RULE-SET,hrules-apple-private-relay-route,"🍎 Apple / iCloud [场景]"
-  - RULE-SET,hrules-apple-global,"🍎 Apple / iCloud [场景]"
-  - RULE-SET,hrules-mainstream-proxy,"🌐 海外应用 [场景]"
-  - RULE-SET,international-domains,"🌐 海外应用 [场景]"
-  - RULE-SET,hrules-cn-ip,DIRECT,no-resolve
-  - MATCH,"🚀 漏网之鱼 [自选]"
+- RULE-SET,hrules-private-direct,DIRECT,no-resolve
+- RULE-SET,microsoft-domains,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,microsoft.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,microsoftonline.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,microsoft365.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,office.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,office365.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,office.net,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,outlook.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,outlook.office.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,hotmail.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,live.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,live.net,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,onedrive.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,sharepoint.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,teams.microsoft.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,azure.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,azure.net,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,visualstudio.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,github.com,🪟 Microsoft 微软
+- DOMAIN-SUFFIX,githubusercontent.com,🪟 Microsoft 微软
+- RULE-SET,hrules-cn-direct,DIRECT
+- RULE-SET,hrules-network-test,🤖 AI 服务 [场景]
+- RULE-SET,hrules-sensitive-ai,🤖 AI 服务 [场景]
+- RULE-SET,hrules-general-ai,🤖 AI 服务 [场景]
+- RULE-SET,hrules-apple-intelligence-route,🤖 AI 服务 [场景]
+- RULE-SET,hrules-streaming-media,📺 流媒体 [场景]
+- RULE-SET,hrules-youtube-media,🌐 海外应用 [场景]
+- RULE-SET,hrules-telegram,🌐 海外应用 [场景],no-resolve
+- RULE-SET,hrules-apple-private-relay-route,🍎 Apple / iCloud [场景]
+- RULE-SET,hrules-apple-global,🍎 Apple / iCloud [场景]
+- RULE-SET,hrules-mainstream-proxy,🌐 海外应用 [场景]
+- RULE-SET,international-domains,🌐 海外应用 [场景]
+- RULE-SET,hrules-cn-ip,DIRECT,no-resolve
+- MATCH,🚀 漏网之鱼 [自选]
 ```
