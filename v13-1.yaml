@@ -1,59 +1,58 @@
-```yaml
 proxy-groups:
-- name: 🌐 海外应用 [场景]
-  type: select
-  proxies:
-  - ⚡ 自动选择
-  - PROXY
-  - DIRECT
-  include-all-proxies: true
+  - name: 🌐 海外应用 [场景]
+    type: select
+    proxies:
+      - ⚡ 自动选择
+      - PROXY
+      - DIRECT
+    include-all-proxies: true
 
-- name: 📺 流媒体 [场景]
-  type: select
-  proxies:
-  - ⚡ 自动选择
-  - PROXY
-  - DIRECT
-  include-all-proxies: true
+  - name: 📺 流媒体 [场景]
+    type: select
+    proxies:
+      - ⚡ 自动选择
+      - PROXY
+      - DIRECT
+    include-all-proxies: true
 
-- name: 🤖 AI 服务 [场景]
-  type: select
-  proxies:
-  - ⚡ 自动选择
-  - PROXY
-  - DIRECT
-  include-all-proxies: true
+  - name: 🤖 AI 服务 [场景]
+    type: select
+    proxies:
+      - ⚡ 自动选择
+      - PROXY
+      - DIRECT
+    include-all-proxies: true
 
-- name: 🍎 Apple / iCloud [场景]
-  type: select
-  proxies:
-  - ⚡ 自动选择
-  - PROXY
-  - DIRECT
-  include-all-proxies: true
+  - name: 🍎 Apple / iCloud [场景]
+    type: select
+    proxies:
+      - ⚡ 自动选择
+      - PROXY
+      - DIRECT
+    include-all-proxies: true
 
-- name: 🪟 Microsoft 微软
-  type: select
-  proxies:
-  - ⚡ 自动选择
-  - PROXY
-  include-all-proxies: true
+  - name: 🪟 Microsoft 微软
+    type: select
+    proxies:
+      - ⚡ 自动选择
+      - PROXY
+    include-all-proxies: true
 
-- name: ⚡ 自动选择
-  type: url-test
-  include-all-proxies: true
-  url: https://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  lazy: true
+  - name: ⚡ 自动选择
+    type: url-test
+    include-all-proxies: true
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: true
 
-- name: 🚀 漏网之鱼 [自选]
-  type: select
-  proxies:
-  - ⚡ 自动选择
-  - PROXY
-  - DIRECT
-  include-all-proxies: true
+  - name: 🚀 漏网之鱼 [自选]
+    type: select
+    proxies:
+      - ⚡ 自动选择
+      - PROXY
+      - DIRECT
+    include-all-proxies: true
 
 rule-providers:
   hrules-private-direct:
@@ -177,39 +176,67 @@ rule-providers:
     interval: 21600
 
 rules:
-- RULE-SET,hrules-private-direct,DIRECT,no-resolve
-- RULE-SET,microsoft-domains,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,microsoft.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,microsoftonline.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,microsoft365.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,office.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,office365.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,office.net,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,outlook.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,outlook.office.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,hotmail.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,live.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,live.net,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,onedrive.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,sharepoint.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,teams.microsoft.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,azure.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,azure.net,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,visualstudio.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,github.com,🪟 Microsoft 微软
-- DOMAIN-SUFFIX,githubusercontent.com,🪟 Microsoft 微软
-- RULE-SET,hrules-cn-direct,DIRECT
-- RULE-SET,hrules-network-test,🤖 AI 服务 [场景]
-- RULE-SET,hrules-sensitive-ai,🤖 AI 服务 [场景]
-- RULE-SET,hrules-general-ai,🤖 AI 服务 [场景]
-- RULE-SET,hrules-apple-intelligence-route,🤖 AI 服务 [场景]
-- RULE-SET,hrules-streaming-media,📺 流媒体 [场景]
-- RULE-SET,hrules-youtube-media,🌐 海外应用 [场景]
-- RULE-SET,hrules-telegram,🌐 海外应用 [场景],no-resolve
-- RULE-SET,hrules-apple-private-relay-route,🍎 Apple / iCloud [场景]
-- RULE-SET,hrules-apple-global,🍎 Apple / iCloud [场景]
-- RULE-SET,hrules-mainstream-proxy,🌐 海外应用 [场景]
-- RULE-SET,international-domains,🌐 海外应用 [场景]
-- RULE-SET,hrules-cn-ip,DIRECT,no-resolve
-- MATCH,🚀 漏网之鱼 [自选]
-```
+  - RULE-SET,hrules-private-direct,DIRECT,no-resolve
+
+  - RULE-SET,microsoft-domains,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,microsoft.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,microsoftonline.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,microsoftonline-p.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,microsoftonline-p.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,microsoft365.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,office.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,office365.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,office.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,officeapps.live.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,officecdn.microsoft.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,outlook.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,outlook.office.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,hotmail.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,live.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,live.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,onedrive.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,sharepoint.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,sharepointonline.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,teams.microsoft.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,skype.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,skype.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,azure.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,azure.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,azureedge.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,azurefd.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,windows.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,windows.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,windowsupdate.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,windowsupdate.microsoft.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,xbox.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,xboxlive.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,bing.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,bing.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,msn.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,microsoftedge.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,microsofttranslator.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,microsoftapp.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,msecnd.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,msauth.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,msftauth.net,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,msftconnecttest.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,msftncsi.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,visualstudio.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,github.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,githubusercontent.com,🪟 Microsoft 微软
+  - DOMAIN-SUFFIX,aka.ms,🪟 Microsoft 微软
+
+  - RULE-SET,hrules-cn-direct,DIRECT
+  - RULE-SET,hrules-network-test,🤖 AI 服务 [场景]
+  - RULE-SET,hrules-sensitive-ai,🤖 AI 服务 [场景]
+  - RULE-SET,hrules-general-ai,🤖 AI 服务 [场景]
+  - RULE-SET,hrules-apple-intelligence-route,🤖 AI 服务 [场景]
+  - RULE-SET,hrules-streaming-media,📺 流媒体 [场景]
+  - RULE-SET,hrules-youtube-media,🌐 海外应用 [场景]
+  - RULE-SET,hrules-telegram,🌐 海外应用 [场景],no-resolve
+  - RULE-SET,hrules-apple-private-relay-route,🍎 Apple / iCloud [场景]
+  - RULE-SET,hrules-apple-global,🍎 Apple / iCloud [场景]
+  - RULE-SET,hrules-mainstream-proxy,🌐 海外应用 [场景]
+  - RULE-SET,international-domains,🌐 海外应用 [场景]
+  - RULE-SET,hrules-cn-ip,DIRECT,no-resolve
+  - MATCH,🚀 漏网之鱼 [自选]
