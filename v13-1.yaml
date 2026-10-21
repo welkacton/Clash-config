@@ -1,265 +1,215 @@
+```yaml
 proxy-groups:
-  - name: 🚀 节点选择
+  - name: "⚡ 自动选择"
+    type: url-test
+    include-all-proxies: true
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+
+  - name: "🌐 海外应用 [场景]"
     type: select
     proxies:
+      - "⚡ 自动选择"
       - PROXY
       - DIRECT
+    include-all-proxies: true
 
-  - name: 🛑 广告拦截
+  - name: "📺 流媒体 [场景]"
     type: select
     proxies:
-      - REJECT
+      - "⚡ 自动选择"
+      - PROXY
       - DIRECT
+    include-all-proxies: true
 
-  - name: 💬 AI 服务
+  - name: "🤖 AI 服务 [场景]"
     type: select
     proxies:
-      - 🚀 节点选择
+      - "⚡ 自动选择"
+      - PROXY
       - DIRECT
+    include-all-proxies: true
 
-  - name: 🍏 苹果服务
+  - name: "🍎 Apple / iCloud [场景]"
     type: select
     proxies:
-      - 🚀 节点选择
+      - "⚡ 自动选择"
+      - PROXY
       - DIRECT
+    include-all-proxies: true
 
-  - name: 🌐 代理通用
+  - name: "🪟 Microsoft 微软"
     type: select
     proxies:
-      - 🚀 节点选择
-      - DIRECT
+      - "⚡ 自动选择"
+      - PROXY
+    include-all-proxies: true
 
-  - name: 🔒 国内直连
+  - name: "🚀 漏网之鱼 [自选]"
     type: select
     proxies:
+      - "⚡ 自动选择"
+      - PROXY
       - DIRECT
-      - 🚀 节点选择
+    include-all-proxies: true
 
 rule-providers:
   hrules-private-direct:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/private_direct.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/private_direct.yaml"
     path: ./providers/private_direct.yaml
     interval: 21600
+
   hrules-network-test:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/network_test.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/network_test.yaml"
     path: ./providers/network_test.yaml
     interval: 21600
+
   hrules-sensitive-ai:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/sensitive_ai.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/sensitive_ai.yaml"
     path: ./providers/sensitive_ai.yaml
     interval: 21600
+
   hrules-general-ai:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/general_ai.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/general_ai.yaml"
     path: ./providers/general_ai.yaml
     interval: 21600
-  hrules-crypto-account:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/crypto_account.yaml
-    path: ./providers/crypto_account.yaml
-    interval: 21600
-  hrules-us-banking-account:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/us_banking_account.yaml
-    path: ./providers/us_banking_account.yaml
-    interval: 21600
-  hrules-brokerage-account:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/brokerage_account.yaml
-    path: ./providers/brokerage_account.yaml
-    interval: 21600
-  hrules-financial-account:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/financial_account.yaml
-    path: ./providers/financial_account.yaml
-    interval: 21600
+
   hrules-streaming-media:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/streaming_media.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/streaming_media.yaml"
     path: ./providers/streaming_media.yaml
     interval: 21600
+
   hrules-youtube-media:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/youtube_media.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/youtube_media.yaml"
     path: ./providers/youtube_media.yaml
     interval: 21600
+
   hrules-telegram:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/telegram.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/telegram.yaml"
     path: ./providers/telegram.yaml
     interval: 21600
+
   hrules-mainstream-proxy:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/mainstream_proxy.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/mainstream_proxy.yaml"
     path: ./providers/mainstream_proxy.yaml
     interval: 21600
+
   hrules-apple-global:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_global.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_global.yaml"
     path: ./providers/apple_global.yaml
     interval: 21600
+
   hrules-apple-intelligence-route:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_intelligence_route.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_intelligence_route.yaml"
     path: ./providers/apple_intelligence_route.yaml
     interval: 21600
+
   hrules-apple-private-relay-route:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_private_relay_route.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/apple_private_relay_route.yaml"
     path: ./providers/apple_private_relay_route.yaml
     interval: 21600
+
   hrules-cn-direct:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/cn_direct.yaml
+    url: "https://raw.githubusercontent.com/hcloudlab/Hrules/main/mihomo/scenes/cn_direct.yaml"
     path: ./providers/cn_direct.yaml
     interval: 21600
+
   hrules-cn-ip:
     type: http
     behavior: ipcidr
     format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"
     path: ./providers/hrules-cn-ip.mrs
     interval: 21600
-  loyalsoldier-geoip:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
-    path: ./providers/loyalsoldier-geoip.mrs
-    interval: 86400
-  loyalsoldier-direct:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt
-    path: ./providers/loyalsoldier-direct.yaml
-    interval: 86400
-  loyalsoldier-proxy:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt
-    path: ./providers/loyalsoldier-proxy.yaml
-    interval: 86400
-  loyalsoldier-reject:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt
-    path: ./providers/loyalsoldier-reject.yaml
-    interval: 86400
-  hagezi-dns-ultimate:
+
+  international-domains:
     type: http
     behavior: domain
-    format: text
-    url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/ultimate.txt
-    path: ./providers/hagezi-dns-ultimate.txt
-    interval: 86400
+    format: mrs
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"
+    path: ./providers/geolocation-not-cn.mrs
+    interval: 21600
+
+  microsoft-domains:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"
+    path: ./providers/microsoft.mrs
+    interval: 21600
 
 rules:
-  - IP-CIDR,50.118.185.194/32,DIRECT
-  - RULE-SET,hagezi-dns-ultimate,🛑 广告拦截
-  - RULE-SET,loyalsoldier-reject,🛑 广告拦截
   - RULE-SET,hrules-private-direct,DIRECT,no-resolve
+  - RULE-SET,microsoft-domains,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,microsoft.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,microsoftonline.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,microsoft365.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,office.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,office365.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,office.net,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,outlook.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,outlook.office.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,hotmail.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,live.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,live.net,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,onedrive.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,sharepoint.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,teams.microsoft.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,azure.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,azure.net,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,visualstudio.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,github.com,"🪟 Microsoft 微软"
+  - DOMAIN-SUFFIX,githubusercontent.com,"🪟 Microsoft 微软"
   - RULE-SET,hrules-cn-direct,DIRECT
-  - RULE-SET,hrules-network-test,💬 AI 服务
-  - RULE-SET,hrules-sensitive-ai,💬 AI 服务
-  - RULE-SET,hrules-general-ai,💬 AI 服务
-  - RULE-SET,hrules-apple-intelligence-route,💬 AI 服务
-  - RULE-SET,hrules-crypto-account,🌐 代理通用
-  - RULE-SET,hrules-us-banking-account,🌐 代理通用
-  - RULE-SET,hrules-brokerage-account,🌐 代理通用
-  - RULE-SET,hrules-financial-account,🌐 代理通用
-  - RULE-SET,hrules-streaming-media,🌐 代理通用
-  - RULE-SET,hrules-youtube-media,🌐 代理通用
-  - RULE-SET,hrules-telegram,🌐 代理通用,no-resolve
-  - RULE-SET,hrules-apple-private-relay-route,🍏 苹果服务
-  - RULE-SET,hrules-apple-global,🍏 苹果服务
-  - RULE-SET,hrules-mainstream-proxy,🌐 代理通用
+  - RULE-SET,hrules-network-test,"🤖 AI 服务 [场景]"
+  - RULE-SET,hrules-sensitive-ai,"🤖 AI 服务 [场景]"
+  - RULE-SET,hrules-general-ai,"🤖 AI 服务 [场景]"
+  - RULE-SET,hrules-apple-intelligence-route,"🤖 AI 服务 [场景]"
+  - RULE-SET,hrules-streaming-media,"📺 流媒体 [场景]"
+  - RULE-SET,hrules-youtube-media,"🌐 海外应用 [场景]"
+  - RULE-SET,hrules-telegram,"🌐 海外应用 [场景]",no-resolve
+  - RULE-SET,hrules-apple-private-relay-route,"🍎 Apple / iCloud [场景]"
+  - RULE-SET,hrules-apple-global,"🍎 Apple / iCloud [场景]"
+  - RULE-SET,hrules-mainstream-proxy,"🌐 海外应用 [场景]"
+  - RULE-SET,international-domains,"🌐 海外应用 [场景]"
   - RULE-SET,hrules-cn-ip,DIRECT,no-resolve
-  - RULE-SET,loyalsoldier-direct,DIRECT
-  - RULE-SET,loyalsoldier-proxy,🚀 节点选择
-  - RULE-SET,loyalsoldier-geoip,DIRECT,no-resolve
-  - GEOSITE,category-ads-all,🛑 广告拦截
-  - GEOSITE,category-ai-!cn,💬 AI 服务
-  - GEOSITE,bilibili,🔒 国内直连
-  - GEOSITE,youtube,🌐 代理通用
-  - GEOSITE,google,🌐 代理通用
-  - GEOSITE,geolocation-cn,🔒 国内直连
-  - GEOSITE,cn,🔒 国内直连
-  - GEOSITE,github,🌐 代理通用
-  - GEOSITE,gitlab,🌐 代理通用
-  - GEOSITE,microsoft,🔒 国内直连
-  - GEOSITE,apple,🍏 苹果服务
-  - GEOSITE,facebook,🌐 代理通用
-  - GEOSITE,instagram,🌐 代理通用
-  - GEOSITE,twitter,🌐 代理通用
-  - GEOSITE,tiktok,🌐 代理通用
-  - GEOSITE,linkedin,🌐 代理通用
-  - GEOSITE,netflix,🌐 代理通用
-  - GEOSITE,hulu,🌐 代理通用
-  - GEOSITE,disney,🌐 代理通用
-  - GEOSITE,hbo,🌐 代理通用
-  - GEOSITE,amazon,🌐 代理通用
-  - GEOSITE,bahamut,🌐 代理通用
-  - GEOSITE,steam,🌐 代理通用
-  - GEOSITE,epicgames,🌐 代理通用
-  - GEOSITE,ea,🌐 代理通用
-  - GEOSITE,ubisoft,🌐 代理通用
-  - GEOSITE,blizzard,🌐 代理通用
-  - GEOSITE,coursera,🌐 代理通用
-  - GEOSITE,edx,🌐 代理通用
-  - GEOSITE,udemy,🌐 代理通用
-  - GEOSITE,khanacademy,🌐 代理通用
-  - GEOSITE,category-scholar-!cn,🌐 代理通用
-  - GEOSITE,paypal,🌐 代理通用
-  - GEOSITE,visa,🌐 代理通用
-  - GEOSITE,mastercard,🌐 代理通用
-  - GEOSITE,stripe,🌐 代理通用
-  - GEOSITE,wise,🌐 代理通用
-  - GEOSITE,aws,🌐 代理通用
-  - GEOSITE,azure,🌐 代理通用
-  - GEOSITE,digitalocean,🌐 代理通用
-  - GEOSITE,heroku,🌐 代理通用
-  - GEOSITE,dropbox,🌐 代理通用
-  - GEOSITE,geolocation-!cn,🌐 代理通用
-  - GEOIP,google,🌐 代理通用
-  - GEOIP,private,🔒 国内直连
-  - GEOIP,cn,🔒 国内直连
-  - GEOIP,telegram,🌐 代理通用
-  - MATCH,🚀 节点选择
+  - MATCH,"🚀 漏网之鱼 [自选]"
+```
